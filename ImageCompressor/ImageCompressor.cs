@@ -28,11 +28,13 @@ namespace ImageCompressorLibrary
 
                 // Rezise image
                 imageBitmap = Resize(imageBitmap, maxWidthPixels);
+
+                // Creating Encoder
                 var encoder = Encoder.Quality;
                 var encoderParameters = new EncoderParameters(1);
                 encoderParameters.Param[0] = new EncoderParameter(encoder, qualityLevel);
 
-                // Saving image
+                // Saving image in "imageCompressedPath"
                 imageBitmap.Save(imageCompressedPath, imageEncoder, encoderParameters);
             }
         }
@@ -50,7 +52,7 @@ namespace ImageCompressorLibrary
         }
 
         /// <summary>
-        /// Get encoder of Image
+        /// Get Image encoder
         /// </summary>
         /// <param name="format">Image Format</param>
         /// <returns></returns>
@@ -63,16 +65,16 @@ namespace ImageCompressorLibrary
         /// Resize Image
         /// </summary>
         /// <param name="image">Image object</param>
-        /// <param name="width">New image Width</param>
+        /// <param name="maxWidth">Max image width in pixels</param>
         /// <returns></returns>
-        private static Bitmap Resize(Image image, int width)
+        private static Bitmap Resize(Image image, int maxWidth)
         {
-            if (image.Width <= width)
+            if (image.Width <= maxWidth)
                 return new Bitmap(image);
 
-            double scale = image.Width / (double)width;
+            double scale = image.Width / (double)maxWidth;
             int newHeight = (int)(image.Height / scale);
-            return new Bitmap(image, width, newHeight);
+            return new Bitmap(image, maxWidth, newHeight);
         }
     }
 

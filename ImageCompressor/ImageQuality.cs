@@ -1,5 +1,8 @@
 ﻿namespace ImageCompressorLibrary
 {
+    /// <summary>
+    /// Imege Quality
+    /// </summary>
     public enum ImageQuality : short
     {
         /// <summary>
