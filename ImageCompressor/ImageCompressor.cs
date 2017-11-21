@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace ImageCompressorLibrary
     /// </summary>
     public static class ImageCompressor
     {
+
         /// <summary>
         /// Compress and resize an image
         /// </summary>
@@ -17,8 +19,12 @@ namespace ImageCompressorLibrary
         /// <param name="imageCompressedPath">New path of image compressed</param>
         /// <param name="maxWidthPixels">Max image width in pixels</param>
         /// <param name="qualityLevel">Quelity level 0 to 100</param>
-        public static void Compress(string imagePath, string imageCompressedPath, int maxWidthPixels, short qualityLevel)
+        /// <exception cref="ArgumentOutOfRangeException">When qualityLevel is higher than 100</exception>
+        public static void Compress(string imagePath, string imageCompressedPath, int maxWidthPixels, ushort qualityLevel)
         {
+            if (qualityLevel > 100)
+                throw new ArgumentOutOfRangeException(nameof(qualityLevel), "Value must be 0 to 100");
+
             using (var fs = new FileStream(imagePath, FileMode.Open))
             {
                 var imageBitmap = new Bitmap(fs);
@@ -48,7 +54,7 @@ namespace ImageCompressorLibrary
         /// <param name="imageQuality">Quality of Image</param>
         public static void Compress(string imagePath, string imageCompressedPath, int maxWidthPixels, ImageQuality imageQuality)
         {
-            Compress(imagePath, imageCompressedPath, maxWidthPixels, (short)imageQuality);
+            Compress(imagePath, imageCompressedPath, maxWidthPixels, (ushort)imageQuality);
         }
 
         /// <summary>
