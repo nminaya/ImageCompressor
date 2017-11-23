@@ -2,7 +2,7 @@
 
 #### Description: 
 
-C# Image Compressor Library, that compress the images without losing quality.
+C# Image Compressor Library, that compress large size images.
 
 #### Table of Contents
 
@@ -14,9 +14,9 @@ C# Image Compressor Library, that compress the images without losing quality.
 
   - C#
   
-## Thats it
+## That's it
 
-Please dont be afraid of ask.
+Please don't be afraid of ask.
 
 ## Credits
 Created by [Nelson Minaya][nelson-profile].  
