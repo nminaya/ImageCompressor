@@ -3,7 +3,7 @@
     /// <summary>
     /// Imege Quality
     /// </summary>
-    public enum ImageQuality : ushort
+    public enum ImageQuality : byte
     {
         /// <summary>
         /// Very Low Quality. Max Compress

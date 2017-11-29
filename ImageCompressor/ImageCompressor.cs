@@ -20,13 +20,14 @@ namespace ImageCompressorLibrary
         /// <param name="maxWidthPixels">Max image width in pixels</param>
         /// <param name="qualityLevel">Quelity level 0 to 100</param>
         /// <exception cref="ArgumentOutOfRangeException">When qualityLevel is higher than 100</exception>
-        public static void Compress(string imagePath, string imageCompressedPath, int maxWidthPixels, ushort qualityLevel)
+        public static void Compress(string imagePath, string imageCompressedPath, int maxWidthPixels, byte qualityLevel)
         {
             if (qualityLevel > 100)
                 throw new ArgumentOutOfRangeException(nameof(qualityLevel), "Value must be 0 to 100");
 
             using (var fs = new FileStream(imagePath, FileMode.Open))
             {
+                // Bitmap
                 var imageBitmap = new Bitmap(fs);
 
                 // Image encoder
@@ -36,9 +37,8 @@ namespace ImageCompressorLibrary
                 imageBitmap = Resize(imageBitmap, maxWidthPixels);
 
                 // Creating Encoder
-                var encoder = Encoder.Quality;
                 var encoderParameters = new EncoderParameters(1);
-                encoderParameters.Param[0] = new EncoderParameter(encoder, qualityLevel);
+                encoderParameters.Param[0] = new EncoderParameter(Encoder.Quality, qualityLevel);
 
                 // Saving image in "imageCompressedPath"
                 imageBitmap.Save(imageCompressedPath, imageEncoder, encoderParameters);
@@ -54,7 +54,7 @@ namespace ImageCompressorLibrary
         /// <param name="imageQuality">Quality of Image</param>
         public static void Compress(string imagePath, string imageCompressedPath, int maxWidthPixels, ImageQuality imageQuality)
         {
-            Compress(imagePath, imageCompressedPath, maxWidthPixels, (ushort)imageQuality);
+            Compress(imagePath, imageCompressedPath, maxWidthPixels, (byte)imageQuality);
         }
 
         /// <summary>
