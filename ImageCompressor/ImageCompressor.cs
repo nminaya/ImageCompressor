@@ -42,6 +42,8 @@ namespace ImageCompressorLibrary
 
                 // Saving image in "imageCompressedPath"
                 imageBitmap.Save(imageCompressedPath, imageEncoder, encoderParameters);
+
+                imageBitmap.Dispose();
             }
         }
 
