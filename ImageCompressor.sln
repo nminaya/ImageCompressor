@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageCompressorLibrary", "ImageCompressor\ImageCompressorLibrary.csproj", "{7A76C0A1-8B0D-4D09-AE00-564AA50E610F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageCompressor.Core", "..\ImageCompresor.Core\ImageCompressor.Core.csproj", "{CE134A6A-44D1-48AA-8885-EB0C6C8B994A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7A76C0A1-8B0D-4D09-AE00-564AA50E610F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A76C0A1-8B0D-4D09-AE00-564AA50E610F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A76C0A1-8B0D-4D09-AE00-564AA50E610F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A76C0A1-8B0D-4D09-AE00-564AA50E610F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE134A6A-44D1-48AA-8885-EB0C6C8B994A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE134A6A-44D1-48AA-8885-EB0C6C8B994A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE134A6A-44D1-48AA-8885-EB0C6C8B994A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE134A6A-44D1-48AA-8885-EB0C6C8B994A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
